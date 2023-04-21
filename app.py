@@ -4,12 +4,15 @@ import pickle
 import tensorflow as tf
 
 from flask import request
-# from flask_wtf.csrf import CSRFProtect
+from flask_wtf.csrf import CSRFProtect
 
 from wtforms import Form, TextAreaField, SubmitField, validators
+import os
 
 app = Flask(__name__)
-# app.config['SECRET_KEY'] = os.urandom(24)
+app.config['SECRET_KEY'] = os.urandom(24)
+csrf = CSRFProtect()
+csrf.init_app(app)
 
 vocab_size = 100_000
 max_len = 55
