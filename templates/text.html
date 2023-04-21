@@ -23,8 +23,8 @@
         
         <label id="comment-label" for="comment"><h3>Comment to Analyze:</h3></label>
         <textarea id="comment-field" name="comment" id="comment" rows="20" cols="50" ></textarea><br>
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
         <input id="submit-button" type="submit" value="Submit"><br>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
 
     </form>
   </body>
