@@ -1,4 +1,4 @@
 le_model.sav
 sentiment_model.h5
 vocab.npz
-__pycache_
+__pycache_/
