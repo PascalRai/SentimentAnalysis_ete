@@ -1,13 +1,16 @@
 import numpy as np
 import pickle
 import tensorflow as tf
+import os
 
 vocab_size = 100_000
 max_len = 55
 
-model = tf.keras.models.load_model('sentiment_model.h5')
-le = pickle.load(open('le_model.sav', 'rb'))
-data = np.load('vocab.npz')
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+le = pickle.load(open(os.path.join(dir_path, 'le_model.sav'), 'rb'))
+model = tf.keras.models.load_model(os.path.join(dir_path, 'sentiment_model.h5'))
+data = np.load(os.path.join(dir_path,'vocab.npz'))
 vocab = data['arr_0']
 
 vectorize_layer = tf.keras.layers.TextVectorization(
