@@ -1,8 +1,8 @@
 from app import app
 from flask import render_template
 from flask import request
-from models.predict import predict
-from forms.comment_form import ContactForm
+from app.utils.prediction import predict
+from app.forms import ContactForm
 
 @app.route('/', methods=['GET', 'POST'])
 def sentiment():

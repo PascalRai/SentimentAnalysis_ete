@@ -4,7 +4,7 @@ from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
 
-from app import views
+from app import routes
 
 app.config['SECRET_KEY'] = os.urandom(24)
 csrf = CSRFProtect()
