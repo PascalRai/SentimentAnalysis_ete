@@ -11,6 +11,7 @@ def sentiment():
     
     if request.method == 'POST' and form.validate():
         
-        return f'Sentiment : {predict(form.comment.data)}'
+        temp = predict(form.comment.data)
+        return f'Sentiment : {temp[0]} with probability of {str(temp[1])}'
     
     return render_template('text.html', form=form)

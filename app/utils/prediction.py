@@ -24,6 +24,7 @@ vectorize_layer = tf.keras.layers.TextVectorization(
 def predict(comment):
     y = vectorize_layer([comment])
     y = model.predict(y)
-    y = np.argmax(y,axis=1)
-    y = le.inverse_transform(y)[0]
-    return y
+    idx = np.argmax(y,axis=1)
+    p = y[0][idx][0]
+    y = le.inverse_transform(idx)[0]
+    return y, round(p,3)
