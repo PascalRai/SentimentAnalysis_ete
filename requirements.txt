@@ -55,7 +55,7 @@ platformdirs
 prompt-toolkit
 protobuf==4.22.3
 psutil
-psycopg2==2.9.6
+psycopg2
 ptyprocess 
 pure-eval
 pyasn1==0.5.0
