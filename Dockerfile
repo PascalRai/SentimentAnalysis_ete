@@ -4,7 +4,9 @@ WORKDIR /sentiment_app
 
 COPY . .
 
-RUN apt-get update && apt-get install nano -y
+RUN apt-get update &&\
+ apt-get install nano -y\
+ apt-get install -y libpq-dev
 
 RUN pip install -r requirements.txt
 
