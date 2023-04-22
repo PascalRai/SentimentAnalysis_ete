@@ -16,11 +16,7 @@ csrf.init_app(app)
 
 from app import models
 
-try:
-    with app.app_context():
-        db.create_all()
-
-except Exception as e:
-    print(f"Error creating database: {str(e)}")
+with app.app_context():
+    db.create_all()
 
 from app import routes
