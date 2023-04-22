@@ -3,3 +3,4 @@ sentiment_model.h5
 vocab.npz
 *.pyc
 *.pyo
+check.ipynb
