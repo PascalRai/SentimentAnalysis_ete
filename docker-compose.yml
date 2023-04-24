@@ -1,0 +1,28 @@
+version: '3'
+
+networks:
+  flask-postgres:
+    driver: bridge
+
+services:
+  db_postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: user_login
+    networks:
+      - flask-postgres
+    container_name: db_postgres
+
+  sa_webapp:
+    build: .
+    depends_on:
+    - db_postgres
+    ports:
+      - "5000:5000"
+    environment:
+      DATABASE_URL: postgresql://postgres:password@172.22.0.2:5432/user_login
+    networks:
+      - flask-postgres
+    container_name: sa_webapp
