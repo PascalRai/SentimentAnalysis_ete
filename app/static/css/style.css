@@ -1,0 +1,71 @@
+#comment-field{
+    display: block;
+    margin: auto;
+    text-align: left;
+  }
+
+  #comment-label, #submit-button {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+
+/******** LOGIN *******/
+#login{
+    text-align: center;
+}
+body{
+    background-image: url(../img/img1.jpg);
+}
+#register .box{
+  padding-top: 40px;
+  background-color: aliceblue;
+  width: 450px;
+  height: 250px;
+  margin-left: 350px;
+  border-radius: 12px;
+  text-align: center;
+  overflow: hidden;
+}
+
+#register .box .txt_field{
+  padding-bottom: 35px;
+}
+
+#register .box label{
+  float: left;
+  margin-left: 25px;
+}
+
+#register .box .txt_field input{
+  float: right;
+  margin-right: 25px;
+}
+
+#register .box input[type="submit"]{
+  width: 60%;
+  height: 40px;
+  border: 1px solid;
+  border-radius: 25px;
+  border-color: #67b5c9;
+  font-size: 18px;
+  background-color:rgb(165, 223, 243);
+  color: #000000;
+  font-weight: 700;
+
+}
+
+#register input[type="submit"]:hover{
+  cursor: pointer;
+  background-color: #67b5c9;
+  transition: 0.3s;
+}
+
+#register a{
+  color: #3ec3e4;
+  text-decoration: none;
+}
+
+#register a:hover{
+  color: #0f5364;
+}

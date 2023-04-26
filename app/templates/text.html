@@ -2,27 +2,14 @@
 <html>
   <head>
     <title>Sentiment Analysis</title> 
-    <style>
-        #comment-label, #submit-button {
-          display: block;
-          margin: auto;
-          text-align: center;
-        }
-    </style>
-    <style>
-        #comment-field{
-          display: block;
-          margin: auto;
-          text-align: left;
-        }
-    </style>
+    <link rel="stylesheet", type= "text/css" href="../static/css/style.css"/>
   </head>
   <body>
     <h1>Sentiment Analysis</h1> <br>
     <form method="POST" action="{{ url_for('sentiment') }}">
         
         <label id="comment-label" for="comment"><h3>Comment to Analyze:</h3></label>
-        <textarea id="comment-field" name="comment" id="comment" rows="20" cols="50" ></textarea><br>
+        <textarea id="comment-field" name="comment" id="comment", placeholder="Enter your text" rows="10" cols="25" ></textarea><br>
         <input id="submit-button" type="submit" value="Submit"><br>
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
 
