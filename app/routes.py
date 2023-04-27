@@ -1,5 +1,4 @@
-from flask_login import login_user, LoginManager, login_required, UserMixin
-from google_auth_oauthlib import get_user_credentials
+from flask_login import login_user, LoginManager
 from app import db
 from app import app
 from flask import render_template
@@ -33,7 +32,6 @@ def sentiment():
 def register():
     form = RegisterForm(request.form)
     if request.method == 'POST' and form.validate():
-        # user = (form.email.data, form.name.data, form.password1.data, form.password2.data)
         user = User(request.form['email'], request.form['name'], request.form['password'])
         db.session.add(user)
         db.session.commit()
@@ -45,7 +43,7 @@ def register():
 
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
-    form = LoginForm()
+    form = LoginForm(request.form)
     if form.validate():
         user = User.query.filter_by(email=form.email.data).first()
         print('Done1')
@@ -54,18 +52,8 @@ def login():
             if user.password == form.password.data:
                 print('Done3')
                 login_user(user)
-        # password = request.form['password']
-        
-        # user = User.query.filter_by(email=email)
-
-        # if user is not None:
-        #     login_user(user)
-        #     return redirect('/')
-
-
-        # if user is not None:
-        #     login_user(request,user)
-        # return redirect('/')
+                print('Done4')
+        return redirect('/')
     else:
         print('Error')
         return render_template('login.html', form=form)
